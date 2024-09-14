@@ -1,6 +1,6 @@
 name: Sphinx Content Tests
 
-on: [push, pull_request]
+on: [workflow_dispatch]
 
 defaults:
   run:

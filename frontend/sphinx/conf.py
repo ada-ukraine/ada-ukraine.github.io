@@ -484,6 +484,8 @@ intersphinx_mapping = {'learn': ('https://learn.adacore.com/', None)}
 
 redirects = { }
 
+exec(open('conf_patch_ukr.py').read()) # Inject Ukr settings
+
 
 def setup(app):
 

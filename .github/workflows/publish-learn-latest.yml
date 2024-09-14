@@ -1,6 +1,6 @@
 name: Publish learn-latest
 
-on: [push]
+on: [workflow_dispatch]
 
 jobs:
   trigger:

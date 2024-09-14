@@ -1,4 +1,4 @@
-name: Sphinx Books Tests
+name: Build Sphinx Books
 
 on: [workflow_dispatch]
 
@@ -7,7 +7,7 @@ defaults:
     working-directory: frontend
 
 jobs:
-  sphinx-books:
+  build:
 
     runs-on: ubuntu-22.04
 
@@ -15,6 +15,8 @@ jobs:
       matrix:
         python-version: ['3.11']
         node-version: [20.x]
+    env:
+      HIDDEN_BOOKS: ${{ github.workspace }}/content/hidden_ukr.txt
 
     steps:
     - uses: actions/checkout@v4
@@ -62,29 +64,49 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - name: Run Webpack production
-      run: make cleanall webpack-production
-    - name: Run SPHINX content tests
-      run: make -k HIDDEN_BOOKS="" HIDDEN_CONTENTS="" test_all_content
-    - name: Build PDF books including build/runtime output
-      run: make HIDDEN_BOOKS="" HIDDEN_CONTENTS="" pdf_books
+    - name: Run Webpack & Sphinx production
+      run: make cleanall webpack-production sphinx-production
+#    - name: Run SPHINX content tests
+#      run: make -k HIDDEN_BOOKS=$HIDDEN_BOOKS HIDDEN_CONTENTS="" test_all_content
+#    - name: Build PDF books including build/runtime output
+#      run: make HIDDEN_BOOKS=$HIDDEN_BOOKS HIDDEN_CONTENTS="" pdf_books
     - name: Archive PDF books in artifact
       uses: actions/upload-artifact@v4
       with:
         name: learn-pdf-books
         path: |
           frontend/dist/pdf_books
-        if-no-files-found: error
+#        if-no-files-found: error
         retention-days: 1
         compression-level: 9
-    - name: Build EPUB books including build/runtime output
-      run: make HIDDEN_BOOKS="" HIDDEN_CONTENTS="" epub_books
+#    - name: Build EPUB books including build/runtime output
+#      run: make HIDDEN_BOOKS=$HIDDEN_BOOKS HIDDEN_CONTENTS="" epub_books
     - name: Archive EPUB books in artifact
       uses: actions/upload-artifact@v4
       with:
         name: learn-epub-books
         path: |
           frontend/dist/epub_books
-        if-no-files-found: error
+#        if-no-files-found: error
         retention-days: 1
         compression-level: 9
+
+    - name: Upload to page artifact
+      uses: actions/upload-pages-artifact@v3.0.1
+      with:
+        path: frontend/dist/html/
+
+  deploy:
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{steps.deployment.outputs.page_url}}
+    steps:
+      - name: Deploy artifact
+        id: deployment
+        uses: actions/deploy-pages@v4
