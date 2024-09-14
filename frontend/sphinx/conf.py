@@ -566,6 +566,8 @@ else:
     for bib_file in Path(content_dir).rglob('*.bib'):
         bibtex_bibfiles.append(str(bib_file))
 
+exec(open('conf_patch_ukr.py').read()) # Inject Ukr settings
+
 
 def setup(app):
 

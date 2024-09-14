@@ -1,10 +1,6 @@
 name: Publish learn-latest
 
-on:
-  workflow_run:
-    workflows: ["Sphinx Books Tests"]
-    branches: [main]
-    types: [completed]
+on: [workflow_dispatch]
 
 jobs:
   publish:
