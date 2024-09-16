@@ -17,9 +17,15 @@ jobs:
         node-version: [20.x]
     env:
       HIDDEN_BOOKS: ${{ github.workspace }}/content/hidden_ukr.txt
+      LANG: uk_UA.UTF-8
 
     steps:
     - uses: actions/checkout@v4
+    - name: Generate uk_UA locale
+      run: |
+          sudo sed -i -e '/uk_UA.UTF-8/s/# //' /etc/locale.gen
+          sudo locale-gen
+          locale -a
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v5
       with:
