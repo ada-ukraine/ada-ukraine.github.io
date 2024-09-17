@@ -1,6 +1,6 @@
 name: Build Sphinx Books
 
-on: [workflow_dispatch]
+on: [push]
 
 defaults:
   run:
@@ -74,33 +74,36 @@ jobs:
       run: make cleanall webpack-production sphinx-production
 #    - name: Run SPHINX content tests
 #      run: make -k HIDDEN_BOOKS=$HIDDEN_BOOKS HIDDEN_CONTENTS="" test_all_content
-#    - name: Build PDF books including build/runtime output
-#      run: make HIDDEN_BOOKS=$HIDDEN_BOOKS HIDDEN_CONTENTS="" pdf_books
+    - name: Build PDF books including build/runtime output
+      run: make HIDDEN_BOOKS=$HIDDEN_BOOKS HIDDEN_CONTENTS="" pdf_books
     - name: Archive PDF books in artifact
       uses: actions/upload-artifact@v4
       with:
         name: learn-pdf-books
         path: |
           frontend/dist/pdf_books
-#        if-no-files-found: error
+        if-no-files-found: error
         retention-days: 1
         compression-level: 9
-#    - name: Build EPUB books including build/runtime output
-#      run: make HIDDEN_BOOKS=$HIDDEN_BOOKS HIDDEN_CONTENTS="" epub_books
+    - name: Build EPUB books including build/runtime output
+      run: make HIDDEN_BOOKS=$HIDDEN_BOOKS HIDDEN_CONTENTS="" epub_books
     - name: Archive EPUB books in artifact
       uses: actions/upload-artifact@v4
       with:
         name: learn-epub-books
         path: |
           frontend/dist/epub_books
-#        if-no-files-found: error
+        if-no-files-found: error
         retention-days: 1
         compression-level: 9
+
+    - name: Move books into html/
+      run: mv -v dist/pdf_books dist/epub_books dist/html
 
     - name: Upload to page artifact
       uses: actions/upload-pages-artifact@v3.0.1
       with:
-        path: frontend/dist/html/
+        path: frontend/dist/html
 
   deploy:
     permissions:
