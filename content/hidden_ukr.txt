@@ -1,3 +1,14 @@
-courses
+courses/Ada_For_The_CPP_Java_Developer
+courses/Ada_For_The_Embedded_C_Developer
+courses/ada-idioms
+courses/advanced-ada
+courses/advanced-spark
+courses/GNAT_Toolchain_Intro
+courses/Guidelines_for_Safe_and_Secure_Ada_SPARK
+courses/intro-to-ada
+courses/intro-to-embedded-sys-prog
+courses/intro-to-spark
+courses/SPARK_for_the_MISRA_C_Developer
+courses/whats-new-in-ada-2022
 labs
 training_examples

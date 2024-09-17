@@ -7,13 +7,6 @@
 забезпечення: від мікроядер і мініатюрних вбудованих систем реального
 часу до масштабних корпоративних рішень і всього, що знаходиться між цим.
 
-```{toctree}
-:maxdepth: 2
-:caption: "Contents:"
-
-about
-```
-
 ## Спробуй Аду прямо зараз:
 
 ```{code} ada run_button project=Introduction main=learn.adb
@@ -31,6 +24,20 @@ begin
 end Learn;
 ```
 
-```{postlist}
+`````{container} content-blocks
 
-```
+   ````{only} builder_html
+      ```{toctree}
+      :maxdepth: 4
+
+      about
+      ```
+   ````
+
+   ```{toctree}
+      :maxdepth: 1
+      :caption: "Courses:"
+
+      Введення в Ada <courses/intro-to-ada-ukr/index>
+   ```
+`````
