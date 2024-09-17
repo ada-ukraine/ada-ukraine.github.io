@@ -2,7 +2,6 @@
 
 exclude_patterns += [
     'about.rst',
-    './index.rst',
     '**/README.md'
 ]
 
@@ -24,7 +23,14 @@ blog_languages = {
 
 blog_post_pattern = ["posts/*.md"]
 
+copyright = u'2023 – 2024, Ada Ukraine. All rights reserved. CC BY 4.0 License'
+
 html_logo = "img/logo_ukr.svg"
+
+html_theme_options = {
+    'logo_only': True,
+    'display_version': False,
+}
 
 language = 'uk'
 
