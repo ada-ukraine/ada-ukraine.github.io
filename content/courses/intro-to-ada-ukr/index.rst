@@ -112,11 +112,11 @@
 
         .. raw:: html
 
-            <a class="ebook-download-button" href="/pdf_books/courses/intro-to-ada-ua.pdf">
+            <a class="ebook-download-button" href="/pdf_books/courses/intro-to-ada-ukr.pdf">
                 Download PDF
             </a>
 
-            <a class="ebook-download-button" href="/epub_books/courses/intro-to-ada-ua.epub">
+            <a class="ebook-download-button" href="/epub_books/courses/intro-to-ada-ukr.epub">
                 Download EPUB
             </a>
 

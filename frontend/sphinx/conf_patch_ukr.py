@@ -2,7 +2,7 @@
 
 exclude_patterns += [
     'about.rst',
-    'index.rst',
+    './index.rst',
     '**/README.md'
 ]
 
