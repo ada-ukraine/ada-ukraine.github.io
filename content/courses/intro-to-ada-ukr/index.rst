@@ -126,3 +126,4 @@
 
     Вступ <chapters/introduction>
     Імперативна мова <chapters/imperative_language>
+    Підпрограми <chapters/subprograms>
