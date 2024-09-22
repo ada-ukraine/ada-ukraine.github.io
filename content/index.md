@@ -1,13 +1,13 @@
 # Ada-Ukraine.github.io
 
-## Що ж таке Ада? 
+## Що ж таке Ада?
 
 Ада - це сучасна мова програмування, яку команди розробників по всьому
 світу використовують для створення критично важливого програмного
 забезпечення: від мікроядер і мініатюрних вбудованих систем реального
 часу до масштабних корпоративних рішень і всього, що знаходиться між цим.
 
-## Спробуй Аду прямо зараз:
+## Спробуй Аду саме зараз:
 
 ```{code} ada run_button project=Introduction main=learn.adb
 
@@ -28,9 +28,8 @@ end Learn;
 
    ````{only} builder_html
       ```{toctree}
-      :maxdepth: 4
 
-      about
+      Про Ada Ukraine <about>
       ```
    ````
 
@@ -38,6 +37,13 @@ end Learn;
       :maxdepth: 1
       :caption: "Courses:"
 
-      Введення в Ada <courses/intro-to-ada-ukr/index>
+      Курси <courses>
    ```
+
+   ````{only} builder_html
+      ```{toctree}
+
+      Статті <posts>
+      ```
+   ````
 `````
