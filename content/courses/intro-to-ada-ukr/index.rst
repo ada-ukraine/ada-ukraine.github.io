@@ -127,3 +127,5 @@
     Вступ <chapters/introduction>
     Імперативна мова <chapters/imperative_language>
     Підпрограми <chapters/subprograms>
+    Модульне програмування <chapters/modular_programming>
+    Суворо типізована мова <chapters/strongly_typed_language>
