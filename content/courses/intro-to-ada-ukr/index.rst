@@ -129,3 +129,6 @@
     Підпрограми <chapters/subprograms>
     Модульне програмування <chapters/modular_programming>
     Суворо типізована мова <chapters/strongly_typed_language>
+    Записи <chapters/records>
+    Массиви <chapters/arrays>
+    Більше про типи <chapters/more_about_types>
