@@ -132,3 +132,4 @@
     Записи <chapters/records>
     Массиви <chapters/arrays>
     Більше про типи <chapters/more_about_types>
+    Тип-посилання <chapters/access_types>
