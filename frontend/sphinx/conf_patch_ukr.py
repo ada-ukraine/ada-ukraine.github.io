@@ -1,5 +1,7 @@
 # Injection into conf.py for Ukrainian
 
+author = u'Ada Ukraine + AdaCore'
+
 exclude_patterns += [
     'about.rst',
     '**/README.md'
@@ -23,29 +25,30 @@ blog_languages = {
 
 blog_post_pattern = ["posts/*.md"]
 
-copyright = u'2023 – 2024, Ada Ukraine. All rights reserved. CC BY 4.0 License'
+copyright = u'2024 – 2025, Ada Ukraine. All rights reserved. CC BY 4.0 License'
 
 html_logo = "img/logo_ukr.svg"
 
 html_sidebars = {
-   'index': [
-          'navbar-nav',
-          'ablog/postcard.html', 'ablog/recentposts.html',
-          'ablog/tagcloud.html', 'ablog/categories.html',
-          'ablog/archives.html',
-         ],
    '**': [
-          'sidebar-nav-bs',
+          'navbar-logo.html',
+          'icon-links.html',
+          'search-button-field.html',
+          'sbt-sidebar-nav.html',
           'ablog/postcard.html', 'ablog/recentposts.html',
           'ablog/tagcloud.html', 'ablog/categories.html',
           'ablog/archives.html',
          ]
 }
 
-html_theme = "pydata_sphinx_theme"
+html_theme = "sphinx_book_theme"
 
 html_theme_options = {
+    "repository_url": "https://github.com/ada-ukraine/ada-ukraine.github.io",
+    "use_repository_button": True,
 }
+
+html_title = "ada-ukraine.github.io"
 
 language = 'uk'
 
