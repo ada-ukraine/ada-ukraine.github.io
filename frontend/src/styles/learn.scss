@@ -3,8 +3,101 @@
 @use 'variables' as v;
 
 // theme overrides
-@mixin dark_mode_image_background_adaptation {
-    img {
+@mixin dark_mode_image_background_adaptation {.btn2 {
+    background-color: $color-theme-bg-dark;
+    color: #fff;
+
+    &:hover {
+        background-color: lighten($color-theme-bg-dark, 10%);
+    }
+}
+
+a {
+    color: #e1641b;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        color: #bc4600;
+    }
+
+    &:visited {
+        color: #eba177;
+    }
+}
+
+// Add scrollbar to TOC (side navigation)
+.wy-side-scroll {
+    width: auto;
+    overflow-y: auto;
+}
+
+.wy-side-nav-search {
+    background-color: $color-theme-bg-dark;
+    a {
+        text-align: right !important;
+        float: right;
+    }
+}
+
+@mixin menu_vertical_current_hover_light_mode_colors {
+    &:hover {
+        background-color: #777777;
+        color: darkorange;
+    }
+}
+
+@mixin menu_vertical_current_light_mode_colors {
+    @include menu_vertical_current_hover_light_mode_colors;
+
+    &:visited {
+        color: #303030;
+        @include menu_vertical_current_hover_light_mode_colors;
+    }
+}
+
+@mixin menu_vertical_alt_current_hover_light_mode_colors {
+    color: #e8e8e8;
+    &:hover {
+        color: lightgoldenrodyellow;
+    }
+}
+
+.wy-menu-vertical {
+    p.caption {
+        color: #fff;
+    }
+    li {
+        a {
+            @include menu_vertical_alt_current_hover_light_mode_colors;
+
+            &:visited {
+                @include menu_vertical_alt_current_hover_light_mode_colors;
+            }
+        }
+        &.current {
+            a {
+                background-color: #eeeeee;
+                color: #303030;
+
+                @include menu_vertical_current_light_mode_colors;
+            }
+            &.toctree-l2 {
+                li.toctree-l3>a {
+                    @include menu_vertical_current_light_mode_colors;
+                }
+            }
+            &.toctree-l3 {
+                li.toctree-l4>a {
+                    @include menu_vertical_current_light_mode_colors;
+                }
+            }
+        }
+    }
+}
+
+.wy-nav-top {
+    background-color: $color-theme-bg-dark;    img {
         &.dark-mode-invert-image {
             -webkit-filter: invert(0.9);
             filter: invert(0.9);
