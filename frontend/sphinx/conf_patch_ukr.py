@@ -23,7 +23,9 @@ blog_languages = {
     'uk': ('Україньска', None),
 }
 
+blog_baseurl = "https://ada-ukraine.github.io/"
 blog_post_pattern = ["posts/*.md"]
+blog_title = "Про Аду українською"
 
 copyright = u'2024 – 2025, Ada Ukraine. All rights reserved. CC BY 4.0 License'
 
@@ -44,7 +46,19 @@ html_sidebars = {
 html_theme = "sphinx_book_theme"
 
 html_theme_options = {
+    "icon_links": [
+        {
+            "name": "Atom feed",
+            "url": "/blog/atom.xml",  # required
+            "icon": "fa-solid fa-rss",
+            "type": "fontawesome",
+        }
+    ],
+    "path_to_docs": "content",
+    "repository_branch": "ukr",
     "repository_url": "https://github.com/ada-ukraine/ada-ukraine.github.io",
+    "use_edit_page_button": True,
+    "use_fullscreen_button": False,
     "use_repository_button": True,
 }
 
