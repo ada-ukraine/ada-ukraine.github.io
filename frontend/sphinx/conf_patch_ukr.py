@@ -9,7 +9,8 @@ exclude_patterns += [
 
 extensions += [
     'ablog',
-    "myst_parser",
+    'myst_parser',
+    'sphinxnotes.isso'
 ]
 
 
@@ -63,6 +64,9 @@ html_theme_options = {
 }
 
 html_title = "ada-ukraine.github.io"
+
+# isso_include_patterns = ['posts/*']
+isso_url = 'http://localhost:3333/issa'
 
 language = 'uk'
 

@@ -180,3 +180,6 @@ alr exec -- gnatstudio -P gnat/my_lib.gpr
 
 Напевно у вас виникнуть запитання. Alire має непогану документацію, з
 якою можна ознайомитися на [сайті](https://alire.ada.dev/docs/).
+
+```{isso}
+```
