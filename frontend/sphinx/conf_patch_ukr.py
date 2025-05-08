@@ -24,7 +24,7 @@ blog_languages = {
 }
 
 blog_baseurl = "https://ada-ukraine.github.io/"
-blog_post_pattern = ["posts/*.md"]
+blog_post_pattern = ["posts/*.md", "posts/podcast/*.md"]
 blog_title = "Про Аду українською"
 
 copyright = u'2024 – 2025, Ada Ukraine. All rights reserved. CC BY 4.0 License'
