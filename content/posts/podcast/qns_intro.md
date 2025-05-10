@@ -22,7 +22,12 @@ tags: Подкаст, Початківцям, Посібник
 важливість чистого та стильного коду. Впевнений, що наш майбутній
 подкаст стане для вас таким же корисним і натхненним!
 
-Перший випуск вже тут!
+## Перший випуск вже тут!
 
 * [Spotify: Посібник з якості та стилю](https://open.spotify.com/episode/3ZGFjcuH6s6pRZv0YfQJkl)
 * [Слухати MP3](https://ipfs.io/ipfs/QmbyC2wesEm5smyxjoV1QT5RqcWRDiWoanJYdn8Sg58hQ4/Introduction.mp3)
+
+## Другий випуск. Форматування коду
+
+* [Spotify: Форматування коду](https://open.spotify.com/episode/4j6NvwGzLOK6l0j6dMFu7l)
+* [Слухати MP3](https://ipfs.io/ipfs/QmfCEDbG5CPuvLohsqQdZJ9fUTdy73n457kB96Nc3xVjLr/Source_Code_Presentation.mp3)
