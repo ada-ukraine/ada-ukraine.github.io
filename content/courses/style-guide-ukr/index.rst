@@ -71,7 +71,7 @@
             </a>
 
 .. toctree::
-    :maxdepth: 4
+    :maxdepth: 3
     :caption: Зміст:
 
     Передмова <chapters/Preface>
