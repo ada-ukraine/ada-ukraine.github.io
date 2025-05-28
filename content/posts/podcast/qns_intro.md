@@ -31,3 +31,8 @@ tags: Подкаст, Початківцям, Посібник
 
 * [Spotify: Форматування коду](https://open.spotify.com/episode/4j6NvwGzLOK6l0j6dMFu7l)
 * [Слухати MP3](https://ipfs.io/ipfs/QmfCEDbG5CPuvLohsqQdZJ9fUTdy73n457kB96Nc3xVjLr/Source_Code_Presentation.mp3)
+
+## Третій випуск. Читабельність коду
+
+* [Spotify: Форматування коду](https://open.spotify.com/episode/5fX6sinDODVtaMuWJjQlb8)
+* [Слухати MP3](https://ipfs.io/ipfs/QmXLHXdV6dJvmeMBER72SFwdPHvUvkRc5SkXUp9TtfMqM2/Readability.mp3)
