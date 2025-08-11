@@ -127,7 +127,7 @@ alr with gnat_arm_elf
 потрібна. Відредагуємо `test.gpr`, додавши такі рядки:
 
 ```
-for Target use "arm-eabi"; 
+for Target use "arm-eabi";
 for Runtime ("Ada") use "light-tasking-stm32f4";
 ```
 
@@ -174,7 +174,7 @@ st-flash --connect-under-reset write bin/test.bin 0x08000000
 або з `OpenOCD`
 
 ```shell
-openocd -f interface/stlink.cfg -f target/stm32f4x.cfg -c 'program bin/test.bin verify reset exit 0x08000000' 
+openocd -f interface/stlink.cfg -f target/stm32f4x.cfg -c 'program bin/test.bin verify reset exit 0x08000000'
 ```
 
 Давайте скористаємося відладчиком, щоб подивитися, як виконується наша
@@ -289,7 +289,7 @@ st-util легко, просто виправте `Connection_Tool `у паке�
 Рекомендується почати ознайомлення з прикладів, що поставляються в цьому
 проекті. Виберіть відповідний пристрій у каталозі `examples`. Наприклад:
 
-    examples/STM32F429_Discovery/blinky_f429disco.gpr
+    examples/stm32_f4ve/blinky_stm32_f4ve.gprs
 
 На жаль, ADL не підтримує Alire, і навпаки. Тому, перш ніж відкрити
 проєкт у GNAT Studio, потрібно переконатися, що крос-компілятор і
@@ -297,6 +297,41 @@ gprbuild присутні в PATH. Найпростіше виконати `alr 
 `alr exec gnatstudio `в каталозі `test`, який ми створили на початку
 статті. Таким чином Alire додасть необхідні шляхи у змінну середовища
 PATH. Після чого можна вже відкривати проєкт із прикладом у студії.
+
+### Підключення через `alr --pin`
+
+Починаючи з Alire 2.1.0 можна підключати проектні файли в підкаталогах
+репозиторіїв, як crate, навіть якщо відсутні файли `alire.toml`.
+Ми можемо скористатися цим та підключати Ada Drivers Library.
+Для цього нам потрібно знати назву файлу проекту та каталог, де він
+лежить у Ada Drivers Library (дивись Додаток 2).
+Наприклад, `stm32_f4ve_sfp.gpr` лежить у каталозі `boards/stm32_f4ve`.
+Тому ми можемо підключити його так:
+
+```shell
+alr pin stm32_f4ve_sfp \
+  --use=https://github.com/AdaCore/Ada_Drivers_Library \
+  --subdir=boards/stm32_f4ve
+```
+
+Тепер нам доступні драйвера та опис board. Тож можемо запустити моргання
+світлодіодом:
+
+```ada
+with STM32.Board;
+with STM32.GPIO;
+
+procedure Test is
+begin
+   STM32.Board.Initialize_LEDs;
+
+   loop
+      STM32.GPIO.Toggle (STM32.Board.All_LEDs);
+
+      delay 0.5;
+   end loop;
+end Test;
+```
 
 ## Висновок
 
@@ -317,7 +352,7 @@ Ada, використовуючи плату STM32F407 як приклад. Ми
 потужна та надійна мова, яка ідеально підходить для розробки критично
 важливих додатків, і ми закликаємо вас вивчити її можливості далі.
 
-## Додаток. Список підтримуваних пристроїв ARM
+## Додаток 1. Список підтримуваних пристроїв ARM
 
 ### `Embedded` та/або `light-tasking`:
 
@@ -361,3 +396,25 @@ Ada, використовуючи плату STM32F407 як приклад. Ми
 | cortex-m7df  |
 | cortex-m7f   |
 | lm3s         |
+
+## Додаток 2. Список підтримуваних плат Ada Drivers Library
+
+| Плата (каталог)     | light-tasking               | embedded                     | light                 |
+|---------------------|-----------------------------|------------------------------|-----------------------|
+| crazyflie           | crazyflie_sfp.gpr           | crazyflie_full.gpr           |                       |
+| feather_stm32f405   | feather_stm32f405_sfp.gpr   | feather_stm32f405_full.gpr   |                       |
+| HiFive1             |                             |                              | hifive1_zfp.gpr       |
+| HiFive1_rev_B       |                             |                              | hifive1_rev_b_zfp.gpr |
+| MicroBit            |                             |                              | microbit_zfp.gpr      |
+| NRF52_DK            |                             |                              | nrf52_dk_zfp.gpr      |
+| nucleo_f446ze       | nucleo_f446ze_sfp.gpr       | nucleo_f446ze_full.gpr       |                       |
+| OpenMV2             | openmv2_sfp.gpr             | openmv2_full.gpr             |                       |
+| stm32f407_discovery | stm32f407_discovery_sfp.gpr | stm32f407_discovery_full.gpr |                       |
+| stm32f429_discovery | stm32f429_discovery_sfp.gpr | stm32f429_discovery_full.gpr |                       |
+| stm32f469_discovery | stm32f469_discovery_sfp.gpr | stm32f469_discovery_full.gpr |                       |
+| stm32_f4ve          | stm32_f4ve_sfp.gpr          | stm32_f4ve_full.gpr          |                       |
+| stm32f4xx_m         | stm32f4xx_m_sfp.gpr         | stm32f4xx_m_full.gpr         |                       |
+| stm32f746_discovery | stm32f746_discovery_sfp.gpr | stm32f746_discovery_full.gpr |                       |
+| stm32f769_discovery | stm32f769_discovery_sfp.gpr | stm32f769_discovery_full.gpr |                       |
+| stm32_h405          | stm32_h405_sfp.gpr          | stm32_h405_full.gpr          |                       |
+| Unleashed           | unleashed_sfp.gpr           | unleashed_full.gpr           | unleashed_zfp.gpr     |
