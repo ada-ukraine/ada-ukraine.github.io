@@ -46,7 +46,7 @@ Ada більш доступною та зрозумілою для всіх!
 
 Цей сайт заснували:
 
-- [Олександр Корочкін](https://comsys.kpi.ua/korochkin-oleksandr-volodimirovich),
+- [Олександр Корочкін](https://comsys.kpi.ua/our-employees/korochkin-oleksandr-volodymyrovych/),
   доцент [кафедри обчислювальної техніки](https://comsys.kpi.ua/)
   Національного технічного університету України
   "Київський політехнічний інститут імені Ігоря Сікорського "
