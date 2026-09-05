@@ -33,33 +33,23 @@ html_logo = "img/logo_ukr.svg"
 
 html_sidebars = {
    '**': [
-          'navbar-logo.html',
-          'icon-links.html',
-          'search-button-field.html',
-          'sbt-sidebar-nav.html',
+          'sidebar/brand.html',
+          'sidebar/search.html',
+          'sidebar/scroll-start.html',
+          'sidebar/navigation.html',
           'ablog/postcard.html', 'ablog/recentposts.html',
           'ablog/tagcloud.html', 'ablog/categories.html',
           'ablog/archives.html',
+          'sidebar/scroll-end.html',
          ]
 }
 
-html_theme = "sphinx_book_theme"
+html_theme = "furo"
 
 html_theme_options = {
-    "icon_links": [
-        {
-            "name": "Atom feed",
-            "url": "/blog/atom.xml",  # required
-            "icon": "fa-solid fa-rss",
-            "type": "fontawesome",
-        }
-    ],
-    "path_to_docs": "content",
-    "repository_branch": "ukr",
-    "repository_url": "https://github.com/ada-ukraine/ada-ukraine.github.io",
-    "use_edit_page_button": True,
-    "use_fullscreen_button": False,
-    "use_repository_button": True,
+    "source_repository": "https://github.com/ada-ukraine/ada-ukraine.github.io",
+    "source_branch": "ukr",
+    "source_directory": "content/",
 }
 
 html_title = "ada-ukraine.github.io"
