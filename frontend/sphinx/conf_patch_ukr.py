@@ -44,13 +44,17 @@ html_sidebars = {
          ]
 }
 
-html_theme = "furo"
+# html_theme is already set to "furo" by the base conf.py (upstream default);
+# no need to re-set it here.
 
-html_theme_options = {
+# Update (not replace!) html_theme_options: the base conf.py already sets
+# furo's light/dark color variables, sidebar_hide_name, top_of_page_buttons,
+# etc. Overwriting the dict here would silently drop all of that.
+html_theme_options.update({
     "source_repository": "https://github.com/ada-ukraine/ada-ukraine.github.io",
     "source_branch": "ukr",
     "source_directory": "content/",
-}
+})
 
 html_title = "ada-ukraine.github.io"
 
