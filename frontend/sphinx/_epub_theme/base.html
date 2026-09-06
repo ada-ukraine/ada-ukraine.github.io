@@ -1,0 +1,16 @@
+{#
+    _epub_theme/base.html
+    ~~~~~~~~~~~~~~~~~~~~~
+
+    ablog's page.html (patched for furo, see ablog_with_furo) does
+    `{% extends "!base.html" %}` unconditionally, assuming the active
+    theme provides a base.html (as furo does). The epub builder uses
+    this separate, lean theme instead of furo, which historically only
+    had a page.html/layout.html pair (no base.html). This file is just
+    the standard Sphinx "basic" page.html, renamed, so ablog's template
+    resolves the same way it would under any basic-derived theme.
+#}
+{%- extends "layout.html" %}
+{% block body %}
+  {{ body }}
+{% endblock %}
