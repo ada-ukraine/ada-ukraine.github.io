@@ -1,0 +1,20 @@
+{#
+    sidebar/social-links.html
+    ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    A small row of icon links (Telegram, Atom feed) shown near the top
+    of the sidebar, right under the brand/logo. More visible than the
+    page footer, since it's visible without scrolling on every page.
+
+    Reuses the same `a.muted-link` class furo itself uses for its
+    footer icons, so hover/visited colors stay consistent with the
+    theme's color variables.
+#}
+<div class="sidebar-social-links" style="display: flex; justify-content: center; gap: 1rem; padding: 0.5rem 0 1rem; font-size: 1.25rem;">
+  <a class="muted-link" href="https://t.me/ada_in_ukraine" aria-label="Telegram" title="Telegram">
+    <span class="fa-brands fa-telegram"></span>
+  </a>
+  <a class="muted-link" href="/blog/atom.xml" aria-label="Atom feed" title="Atom feed">
+    <span class="fa-solid fa-rss"></span>
+  </a>
+</div>

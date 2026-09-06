@@ -1,0 +1,24 @@
+/*
+ * ukr-ablog-sidebar.css
+ * ~~~~~~~~~~~~~~~~~~~~~
+ *
+ * ablog's sidebar widgets (Recent Posts, Tags, Archive, Categories,
+ * postcard) render plain <a> tags with no class, so they fall through
+ * to the site-wide `a` / `a:visited` rules (--color-link /
+ * --color-link--visited) instead of furo's own
+ * `.sidebar-tree .reference` rule -- which furo deliberately never
+ * gives a :visited color, so the rest of the sidebar navigation always
+ * stays the same color regardless of click history.
+ *
+ * This file brings ablog's sidebar links in line with that same
+ * behavior, for visual consistency with the rest of the sidebar.
+ */
+.ablog-sidebar-item a:visited {
+    color: var(--color-link);
+    text-decoration-color: var(--color-link-underline);
+}
+
+.ablog-sidebar-item a:visited:hover {
+    color: var(--color-link--hover);
+    text-decoration-color: var(--color-link-underline--hover);
+}

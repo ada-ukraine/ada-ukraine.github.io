@@ -31,9 +31,20 @@ copyright = u'2024 – 2025, Ada Ukraine. All rights reserved. CC BY 4.0 License
 
 html_logo = "img/logo_ukr.svg"
 
+# Custom templates for the Ukrainian fork live in a separate directory
+# from '_templates' (which publish-latest.yml wipes before the production
+# build, since that directory holds AdaCore-only files like analytics.html).
+templates_path.append('_templates_ukr')
+
+# Same idea for static assets: keep ukr-specific files out of the shared
+# 'img' static path.
+html_static_path.append('_static_ukr')
+html_css_files.append('ukr-ablog-sidebar.css')
+
 html_sidebars = {
    '**': [
           'sidebar/brand.html',
+          'sidebar/social-links.html',
           'sidebar/search.html',
           'sidebar/scroll-start.html',
           'sidebar/navigation.html',
@@ -54,6 +65,20 @@ html_theme_options.update({
     "source_repository": "https://github.com/ada-ukraine/ada-ukraine.github.io",
     "source_branch": "ukr",
     "source_directory": "content/",
+    "footer_icons": [
+        {
+            "name": "Telegram",
+            "url": "https://t.me/ada_in_ukraine",
+            "html": '<span class="fa-brands fa-telegram"></span>',
+            "class": "",
+        },
+        {
+            "name": "Atom feed",
+            "url": "/blog/atom.xml",
+            "html": '<span class="fa-solid fa-rss"></span>',
+            "class": "",
+        },
+    ],
 })
 
 html_title = "ada-ukraine.github.io"
