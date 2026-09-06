@@ -17,16 +17,15 @@ jobs:
         node-version: [24.x]
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version: ${{ matrix.python-version }}
-    - uses: actions/checkout@v4
     - name: Enable Corepack
       run: corepack enable
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v6
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'pnpm'
@@ -71,7 +70,7 @@ jobs:
     - name: Build PDF books including build/runtime output
       run: make HIDDEN_BOOKS="" HIDDEN_CONTENTS="" pdf_books
     - name: Archive PDF books in artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: learn-pdf-books
         path: |
@@ -82,7 +81,7 @@ jobs:
     - name: Build EPUB books including build/runtime output
       run: make HIDDEN_BOOKS="" HIDDEN_CONTENTS="" epub_books
     - name: Archive EPUB books in artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: learn-epub-books
         path: |
