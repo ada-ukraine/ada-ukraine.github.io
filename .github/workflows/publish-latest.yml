@@ -69,6 +69,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+        pip install -e python/rst_code_example_pipeline
     - name: Drop templates and index.rst
       run: rm -v sphinx/_templates/* ../content/index.rst
     - name: Run Webpack & Sphinx production
