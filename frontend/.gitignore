@@ -9,3 +9,4 @@ coverage/
 pnpm-debug.log
 .coverage
 sphinx/objects.inv.learn
+sphinx/locales/**/*.mo

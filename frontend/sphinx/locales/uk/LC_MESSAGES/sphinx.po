@@ -1,0 +1,28 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ada-ukraine-theme-strings\n"
+"Report-Msgid-Bugs-To: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+
+#. furo/page.html -- previous/next page navigation labels
+msgid "Next"
+msgstr "Далі"
+
+msgid "Previous"
+msgstr "Назад"
+
+#. furo/page.html -- in-page table of contents heading
+msgid "On this page"
+msgstr "На цій сторінці"
+
+#. ablog/recentposts.html -- sidebar widget heading
+msgid "Recent Posts"
+msgstr "Останні статті"
+
+#. ablog/tagcloud.html -- sidebar widget heading
+msgid "Tags"
+msgstr "Теги"

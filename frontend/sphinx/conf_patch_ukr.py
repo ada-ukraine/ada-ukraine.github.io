@@ -2,6 +2,17 @@
 
 author = u'Ada Ukraine + AdaCore'
 
+# Custom translations for furo/ablog UI strings ("Next", "Previous",
+# "On this page", "Recent Posts", "Tags") not covered by Sphinx's own
+# bundled uk_UA catalog. Sphinx resolves `locale_dirs` relative to the
+# *content source* directory being built (srcdir), which differs between
+# a full-site build (content/) and a per-unit book build
+# (content/courses/<unit>/) -- so a plain relative 'locales' entry would
+# only be found in one of those cases. Using an absolute path here makes
+# pathlib's `/` join a no-op (an absolute right-hand path wins), so this
+# resolves the same way regardless of which directory is being built.
+locale_dirs = [os.path.abspath('locales')]
+
 exclude_patterns += [
     'about.rst',
     '**/README.md'

@@ -35,7 +35,7 @@ end Learn;
 
    ```{toctree}
       :maxdepth: 1
-      :caption: "Courses:"
+      :caption: "Курси:"
 
       Курси <courses>
    ```
